@@ -37,6 +37,12 @@ module.exports.set_organization = (org) => {
     this.organization = org;
 }
 
+module.exports.digest1 = (basestring) => {
+    let digest = crypto.createHmac('sha256', `${Consumer_secret}&`).update(basestring).digest("base64");
+
+    return digest;
+}
+
 module.exports.iterate_signature = {
     from_params: (data) => { //requires an object data with the following: { http_method: ?, base_uri: ?, rp_to_normalize: ?} where ? means any value that can be assigned to an object property
         let container = new Array();
