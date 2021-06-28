@@ -1,1 +1,1 @@
-Netsuite TBA authentication using Express with Node.js
+Netsuite TBA example authentication using Express with Node.js
